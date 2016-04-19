@@ -1,0 +1,237 @@
+
+.page>h1:first-of-type
+{
+	/*Override bootstrap default border below H1 since it cuts through nav drop down*/
+	border-bottom: 0px !important;
+}
+
+.container
+{
+	//width: 80% !important;
+}
+
+/*-----------------------------------------------Generated Top Nav-----------------------------------------------*/
+.nav-container
+{
+
+}
+
+.standard-nav
+{
+	margin-top: 15px;
+}
+.standard-nav a
+{
+	margin-right: 20px;	
+    	
+	color: @ini_sarthNavbar-textPrimaryColor;
+	font-family: brandon-grotesque,Raleway,sans-serif;
+    font-weight: lighter;
+    font-size: 28px;
+	
+	clear:rigth;
+}
+
+.standard-nav a:link,
+.standard-nav a:visited,
+.standard-nav a:active
+{
+	color: @ini_sarthNavbar-textPrimaryColor;
+	text-decoration: none;
+}
+
+.standard-nav a:hover
+{
+	color: @ini_sarthNavbar-linkHoverColor;
+}
+
+
+.generated-nav
+{
+	position: relative;	
+}
+
+
+
+
+
+/*-----------------------------------------------Generated Top Nav-----------------------------------------------*/
+#navbar.navbar-default 
+{
+    background-color: @ini_sarthNavbar-primaryColor;
+	border-color: @ini_sarthNavbar-accentColor;
+	font:inherit;
+	font-size: 1em;
+	z-index: 10000;
+}
+
+
+/*Branding cell of navbar*/
+#navbar.navbar-default .navbar-brand{
+    color: @ini_sarthNavbar-textPrimaryColor;	
+}
+
+/*Text color*/
+#navbar.navbar-default .navbar-nav>li>a
+{
+    color: @ini_sarthNavbar-linkPrimaryColor;
+}
+
+/*Top Level Nav Bar Buttons*/
+#navbar.navbar-default .navbar-nav>.active>a,
+#navbar.navbar-default .navbar-nav>.open>a,
+#navbar.navbar-default .navbar-nav>li:hover,
+#navbar.navbar-default .navbar-nav>li>a:hover
+{	
+	background-color: @ini_sarthNavbar-primaryColor;
+	color: @ini_sarthNavbar-linkHoverColor;
+}
+
+
+/*----------Drop Down----------*/
+#navbar.navbar-default .navbar-nav .dropdown-menu,
+#navbar.navbar-default .navbar-nav .dropdown-menu>li>a
+{
+	color: @ini_sarthNavbar-linkPrimaryColor;
+	background-color: @ini_sarthNavbar-secondaryColor;
+	border-color:@ini_sarthNavbar-secondaryColor;
+}
+
+#navbar.navbar-default .navbar-nav .dropdown-menu>li>a:hover,
+#navbar.navbar-default .navbar-nav .dropdown .dropdown-menu>li>a.active
+{
+	color: @ini_sarthNavbar-linkHoverColor;
+	background-color: @ini_sarthNavbar-primaryColor;
+}
+
+#navbar.navbar-fixed-top
+{
+
+}
+
+
+
+/*----------'Bottom Align' Navbar Elements -----------*/
+
+#navbar .navbar-nav
+{
+	margin-top: -10px;	
+}
+
+#navbar .navbar-right
+{
+	margin-top: -20px;
+}
+
+/*----------'Bottom Align' Search -----------*/
+#dw__search
+{
+	margin-top: -10px!important;
+}
+
+/*--You Are Here - Breadcrumb - Navigation */ 
+.youarehere
+{
+	margin-top: 45px;
+}
+
+/*----------Main Content Box-----------*/
+#dokuwiki__content
+{
+	margin-top: 65px;
+}
+
+
+/*----------ToC-----------*/
+#dw_toc 
+{
+	z-index: 9999;
+}
+
+#dokuwiki__aside
+{
+	margin-top: 75px;
+}
+
+
+
+/* Large Nav */
+.dropdown-menu-lg {
+  max-width: 750;
+  padding: 20px 0px;
+}
+.dropdown-menu-lg > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu-lg > li > ul > li {
+  list-style: none;
+}
+.dropdown-menu-lg > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
+}
+.dropdown-menu-lg > li ul > li > a:hover,
+.dropdown-menu-lg > li ul > li > a:focus {
+  text-decoration: none;
+  color:#FFFFFF;
+  background-color: #0F6A37;
+}
+.dropdown-menu-lg .disabled > a,
+.dropdown-menu-lg .disabled > a:hover,
+.dropdown-menu-lg .disabled > a:focus {
+  color: #999999;
+}
+.dropdown-menu-lg .disabled > a:hover,
+.dropdown-menu-lg .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.dropdown-menu-lg .dropdown-header {
+  color: @ini_sarthNavbar-linkHoverColor;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .dropdown-menu-lg {
+    margin-left: 0 ;
+    margin-right: 0 ;
+  }
+  .dropdown-menu-lg > li {
+    margin-bottom: 30px;
+  }
+  .dropdown-menu-lg > li:last-child {
+    margin-bottom: 0;
+  }
+  .dropdown-menu-lg .dropdown-header {
+    padding: 3px 15px !important;
+  }
+}
+
+.col-sm-3
+{
+	width: 33%!important;
+}
+
+.one-col
+{
+	width: 250px;
+}
+
+.two-col
+{
+	width: 500px;
+}
+
+.three-col
+{
+	width: 750px;
+}
+
