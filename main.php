@@ -80,7 +80,7 @@ if ($brandImg != ''):
                     <span class="icon-bar"></span>
                 </button>
                 <?php if ($brandImg != '') { ?>
-                    <a class="navbar-brand-img navbar-brand" href="<?php echo $DOKU_URL; ?>"><img src="<?php echo $brandImg; ?>" alt="<?php $conf['title'] ?>"></a>
+                    <a class="navbar-brand-img navbar-brand" href="/"><img src="<?php echo $brandImg; ?>" alt="<?php $conf['title'] ?>"></a>
                 <?php } ?>
                 <?php if ($brandImg == '' || tpl_getConf('header_title')) {
                 tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]" class="navbar-brand"');
@@ -96,37 +96,19 @@ if ($brandImg != ''):
 						<a href ="https://learn.digilentinc.com/">Learn</a>
 						<a href ="http://blog.digilentinc.com/">Blog</a>
 						<a href ="http://forum.digilentinc.com/">Forum</a>
+						<a href ="https://reference.digilentinc.com/">Documentation</a>
 					</div>
 					
 					<!------------------------------------------------------------------------------------------				
 					- START WIKI NAV
 					---------------------------------------------	--------------------------------------------->
 					<?php
-						echo getNavBar();
-					?>
-			
-					
-						
-						
-						
+						//echo getNavBar();
+					?>						
 					<!------------------------------------------------------------------------------------------				
 					- END WIKI NAV
 					---------------------------------------------	--------------------------------------------->
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+								
 										
 					<!---------------Tools --------------->
 					<ul class="nav navbar-nav navbar-right">

@@ -11,12 +11,12 @@
 	//Clear debug log
 	function debugClear()
 	{			
-		file_put_contents('/var/www/sarth/logs/navDebug.txt', '');
+		file_put_contents('/var/www/logs/navDebug.txt', '');
 	}
 	
 	//Log debug info
 	function debugLog($data)
 	{
 		$data = $data . "\n";
-		file_put_contents('/var/www/sarth/logs/navDebug.txt', $data, FILE_APPEND);
+		file_put_contents('/var/www/logs/navDebug.txt', $data, FILE_APPEND);
 	}
