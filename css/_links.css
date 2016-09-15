@@ -38,7 +38,6 @@
 }
 /* external link */
 .dokuwiki a.urlextern {
-  background-image: url(images/external-link.png);
   /*
     @deprecated, change since Adora Belle:
     background-image: url(../../images/external-link.png);

@@ -103,21 +103,21 @@ if ($brandImg != ''):
 					- START WIKI NAV
 					---------------------------------------------	--------------------------------------------->
 					<?php
-						//echo getNavBar();
+						echo getNavBar();
 					?>						
 					<!------------------------------------------------------------------------------------------				
 					- END WIKI NAV
 					---------------------------------------------	--------------------------------------------->
 								
 										
-					<!---------------Tools --------------->
+					<!---------------Tools ---------------> 
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($showTools): ?>
 							<?php tpl_action('edit', 1, 'li'); ?>
-						<?php endif; ?>
+						<?php endif; ?> 
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $lang['tools']; ?> <b class="caret"></b></a>
-							<ul class="dropdown-menu">
+							<a href="#" class="dropdown-toggle toolsdrop" data-toggle="dropdown"><?php echo $lang['tools']; ?> <b class="caret"></b></a>
+							<ul class="dropdown-menu hortop">
 								<li class="dropdown-header"><?php echo $lang['page_tools'] ?></li>
 								<?php
 									tpl_action('edit', 1, 'li');
@@ -167,10 +167,16 @@ if ($brandImg != ''):
             </div>
 			
 			<!--Removed By Kristoff
-				<a href="#dokuwiki__content" class="sr-only hidden-print"><?php echo $lang['skip_to_content']; ?></a>
-				<a href="#dokuwiki__aside" class="skip-to-sidebar hidden-print visible-xs btn-block btn btn-info"><?php echo "Skip to Navigation"; // echo $lang['skip_to_nav']; ?></a>
+				<a href="#dokuwiki__content" class="sr-only hidden-print"><//?php echo $lang['skip_to_content']; ?></a>
+				<a href="#dokuwiki__aside" class="skip-to-sidebar hidden-print visible-xs btn-block btn btn-info"><//?php echo "Skip to Navigation"; // echo $lang['skip_to_nav']; ?></a>
 			-->
             <?php if($conf['breadcrumbs']) _tpl_breadcrumbs(); ?>
+            
+            <?php if($conf['youarehere']){ ?>
+				<div class="youarehere">
+					<?php bootstrap_tpl_youarehere() ?>
+				</div>
+			<?php } ?>
 
             <?php
                 $sidebar_contents = "";
@@ -235,11 +241,7 @@ if ($brandImg != ''):
             </section><!-- /wrapper -->
 
             <!-- ********** FOOTER ********** -->            
-			<?php if($conf['youarehere']){ ?>
-				<div class="youarehere">
-					<?php bootstrap_tpl_youarehere() ?>
-				</div>
-			<?php } ?>
+			
     </div></div><!-- /site -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>

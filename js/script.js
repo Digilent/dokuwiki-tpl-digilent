@@ -25,10 +25,12 @@ jQNew(document).ready(function() {
     });
 
     /* http://www.kryogenix.org/code/browser/sorttable/ */
+    /* SK commented to prevent all tables from sorting
     jQNew('.page table').each(function() {
         sorttable.makeSortable(jQNew(this).get(0));
     });
-
+    */
+    
     // Scroll to a link smoothly
     smoothToPadding = jQNew('#dokuwiki__top .navbar').first().innerHeight() + 10;
     function smoothTo() {
