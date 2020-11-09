@@ -2,9 +2,9 @@
 	
 	function getNavBar()
 	{
-		debugClear();
+		//debugClear();
 		$navHTML = file_get_contents(dirname(__FILE__).'/navbar.tpl.html');
-		debugLog($navHTML);
+		//debugLog($navHTML);
 		return $navHTML;
 	}
 	

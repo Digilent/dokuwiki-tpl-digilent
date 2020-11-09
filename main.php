@@ -21,12 +21,19 @@ if ($sidebarCols < 0 || $sidebarCols >= 12) {
 ?><!DOCTYPE html>
 <html xml:lang="<?php echo $conf['lang'] ?>" lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
+    <script src="https://unpkg.com/vue"></script>
     <meta charset="UTF-8" />
+    <meta name="referrer" content="always" />
+
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>
         <?php tpl_pagetitle() ?>
         [<?php echo strip_tags($conf['title'])?>]
     </title>
+    
+    <script src="https://use.typekit.net/cts6oju.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    
     <?php @require_once(dirname(__FILE__).'/head-css.php'); ?>
 <?php
 $brandImg = tpl_getConf('header_img');
@@ -54,9 +61,28 @@ if ($brandImg != ''):
         }
     </style>
 <?php endif; ?>
+
+<!-- Cookie Policy Notification -->
+<link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.css"/>
+<script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/digilent-cookie-consent.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHG3J9R');</script>
+<!-- End Google Tag Manager -->
+
 </head>
 
 <body data-spy="scroll" data-target="#dw_toc">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHG3J9R"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
     <?php /* with these Conditional Comments you can better address IE issues in CSS files,
              precede CSS rules by #IE6 for IE6, #IE7 for IE7 and #IE8 for IE8 (div closes at the bottom) */ ?>
     <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
@@ -70,7 +96,8 @@ if ($brandImg != ''):
 	<div id="dokuwiki__top" class="dokuwiki site mode_<?php echo $ACT ?> <?php echo ($showSidebar) ? 'hasSidebar' : '' ?>">
         
 		<!-------------------------------------Start  OF HEADER------------------------------------->	
-		<div class="navbar navbar-default navbar-fixed-top" id="navbar">			
+		<div class="navbar navbar-default navbar-fixed-top container-fluid" id="navbar">
+            <div class="container">
             <?php tpl_includeFile('header.html') ?>
             <div class="navbar-header">
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#topnav" type="button">
@@ -87,16 +114,14 @@ if ($brandImg != ''):
                 } ?>		
             </div>
 			
-			
-			
             <div class="navbar-collapse collapse" id="topnav">				
 				<!---------------Generate Navbar--------------->					
-					<div class="standard-nav">
+					<div class="standard-nav nav nav-bar">
 						<a href ="http://store.digilentinc.com/">Store</a>
-						<a href ="https://learn.digilentinc.com/">Learn</a>
 						<a href ="http://blog.digilentinc.com/">Blog</a>
 						<a href ="http://forum.digilentinc.com/">Forum</a>
-						<a href ="https://reference.digilentinc.com/">Documentation</a>
+                        <a href="http://projects.digilentinc.com/">Projects</a>
+                        <a href ="https://reference.digilentinc.com/">Documentation</a>
 					</div>
 					
 					<!------------------------------------------------------------------------------------------				
@@ -104,12 +129,11 @@ if ($brandImg != ''):
 					---------------------------------------------	--------------------------------------------->
 					<?php
 						echo getNavBar();
-					?>						
+					?>
 					<!------------------------------------------------------------------------------------------				
 					- END WIKI NAV
 					---------------------------------------------	--------------------------------------------->
-								
-										
+												
 					<!---------------Tools ---------------> 
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($showTools): ?>
@@ -154,13 +178,9 @@ if ($brandImg != ''):
 				<?php _tpl_searchform() ?>
 
 		</div>
-	</div>		
+	</div>	
+    </div>
 	<!-------------------------------------END OF HEADER------------------------------------->
-
-		
-			
-		
-		
         <div class="container<?php if ((int) tpl_getConf('full_width') === 1) { echo "-fluid"; } ?> not-header">
             <div class="notifications hidden-print">
                 <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
@@ -202,7 +222,7 @@ if ($brandImg != ''):
                     <?php tpl_includeFile('pageheader.html') ?>
 
                     <?php _tpl_toc(); ?>
-                    <div class="page" role="main">
+                    <div class="page row" role="main">
                     <!-- wikipage start -->
                         <?php
                         if ($ID == "starterbootstrap:index" && auth_quickaclcheck($id) > AUTH_CREATE) {
@@ -215,6 +235,8 @@ if ($brandImg != ''):
                     </div>
 
                     <?php tpl_includeFile('pagefooter.html') ?>
+					
+					
                 </div><!-- /content -->
 
                 <!-- ********** ASIDE ********** -->
@@ -243,11 +265,105 @@ if ($brandImg != ''):
             <!-- ********** FOOTER ********** -->            
 			
     </div></div><!-- /site -->
+	<div class="container-fluid footer">
+	<div class="container">
+        <div class="row">
+            <!-- <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <div class="mailchimp-newsletter">
+                    <h3 class="text-center">Subscribe to our Newsletter</h3>
+                    <div id="mc_embed_signup">
+                    <form action="//digilentinc.us8.list-manage.com/subscribe/post?u=cf6d73f14b5a712de344b738a&amp;id=7953e871f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll row">
+                            <div class="mc-field-group form-group">
+                                <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" placeholder="First Name">
+                            </div>
+                            <div class="mc-field-group form-group">
+                                <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME" placeholder="Last Name">
+                            </div>
+                            <div class="mc-field-group form-group">
+                                <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address">
+                            </div>
+
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_cf6d73f14b5a712de344b738a_7953e871f4" tabindex="-1" value="">
+                            </div>
+                            <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="btn form-control">
+                        </div>
+                    </form>
+                    </div> 
+                </div>
+            </div> -->
+        </div>
+		<div class="row footer-links">
+            <div class="col-xs-3 col-sm-2">
+                <h4>Our Partners</h4>
+                <ul class="no-bullet">
+                    <li><a href="https://store.digilentinc.com/partners/xilinx-university-program/">Xilinx
+                            University
+                            Program</a></li>
+                    <li><a href="https://store.digilentinc.com/technology-partners/">Technology Partners</a>
+                    </li>
+                    <li><a href="https://store.digilentinc.com/our-distributors/">Distributors</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3 col-sm-2">
+                <h4>Help</h4>
+                <ul class="no-bullet">
+                    <li><a href="https://forum.digilentinc.com">Technical Support Forum</a></li>
+                    <li><a href="https://reference.digilentinc.com">Reference Wiki</a></li>
+                    <li><a href="https://store.digilentinc.com/contact-us/">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3 col-sm-2">
+                <h4>Customer Info</h4>
+                <ul class="no-bullet">
+                    <li><a href="https://youtube.com/user/digilentinc">Videos</a></li>
+                    <li><a href="https://resource.digilentinc.com/verify/faq">FAQ</a></li>
+                    <li><a href="https://store.digilentinc.com/store-info/">Store Info</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-sm-2">
+                <h4>Company Info</h4>
+                <ul class="no-bullet">
+                    <li><a href="https://store.digilentinc.com/pages.php?pageid=26">About Us</a></li>
+                    <li><a href="https://store.digilentinc.com/shipping-returns/">Shipping & Returns</a></li>
+                    <li><a href="https://store.digilentinc.com/legal/">Legal</a></li>
+                    <li><a href="https://store.digilentinc.com/jobs/">Jobs</a></li>
+                    <li><a href="https://store.digilentinc.com/internships/">Internships</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 social">
+                <h4>Connect With Us</h4>
+                    <ul class="inline-list social-footer">
+                        <li><a href="https://twitter.com/digilentinc"><img data-type="twitter" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic twitter" alt="social"/></a></li>
+                        <li><a href="https://www.facebook.com/Digilent"><img data-type="facebook" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic facebook" alt="social"/></a></li>
+                        <li><a href="https://www.youtube.com/user/DigilentInc"><img data-type="youtube" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic youtube" alt="social"/></a></li>
+                        <li><a href="https://instagram.com/digilentinc"><img data-type="instagram" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic instagram" alt="social"/></a></li>
+                        <li><a href="https://github.com/digilent"><img data-type="github" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic github" alt="social"/></a></li>
+                        <li><a href="https://www.reddit.com/r/digilent"><img data-type="reddit" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic reddit" alt="social"/></a></li>
+                        <li><a href="https://www.linkedin.com/company/1454013"><img data-type="linkedin" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic linkedin" alt="social"/></a></li>
+                        <li><a href="https://www.flickr.com/photos/127815101@N07"><img data-type="flickr" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic flickr" alt="social"/></a></li>
+                    </ul>
+            </div>
+        </div>
+	</div>
+	</div>
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
 
     <?php @require_once(dirname(__FILE__).'/tail-js.php'); ?>
+
+    <!-- Mautic -->
+    <script>
+    (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+        w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+        m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://mautic.digilentinc.com/mtc.js','mt');
+    mt('send', 'pageview');
+
+</script>
 </body>
 </html>
 

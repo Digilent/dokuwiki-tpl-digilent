@@ -3949,7 +3949,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-collapse {
-    width: auto;
+    width: 1155px; /* note(andrew): originally set to auto, but the search bar was getting pushed down when logged out, blocking the breadcrumbs */
     border-top: 0;
     -webkit-box-shadow: none;
             box-shadow: none;

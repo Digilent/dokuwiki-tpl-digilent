@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   data-icon="social"
+   width="128"
+   height="128"
+   class="iconic iconic-social"
+   viewBox="0 0 128 128"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="facebook.svg">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1404"
+     inkscape:window-height="840"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="1.84375"
+     inkscape:cx="-8.1355932"
+     inkscape:cy="64"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g4">
+    <title
+       id="title6">Social</title>
+  </g>
+  <g
+     data-width="128"
+     data-height="124"
+     class="iconic-lg iconic-container"
+     display="inline"
+     transform="translate(0 2)"
+     id="g8"
+     style="fill:#3b5998;fill-opacity:1">
+    <g
+       class="iconic-social-facebook"
+       id="g10"
+       style="fill:#3b5998;fill-opacity:1">
+      <path
+         d="M120.936 0h-113.871c-3.903 0-7.065 3.162-7.065 7.065v113.871c0 3.901 3.162 7.065 7.065 7.065h61.304v-49.568h-16.681v-19.318h16.681v-14.246c0-16.533 10.097-25.535 24.846-25.535 7.064 0 13.136.526 14.906.761v17.278l-10.229.005c-8.021 0-9.574 3.812-9.574 9.405v12.333h19.129l-2.491 19.318h-16.638v49.568h32.618c3.901 0 7.064-3.163 7.064-7.065v-113.871c0-3.902-3.163-7.065-7.064-7.065z"
+         class="iconic-property-fill"
+         id="path12"
+         style="fill:#3b5998;fill-opacity:1" />
+    </g>
+  </g>
+</svg>
