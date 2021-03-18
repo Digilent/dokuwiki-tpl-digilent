@@ -27,8 +27,7 @@ if ($sidebarCols < 0 || $sidebarCols >= 12) {
 
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>
-        <?php tpl_pagetitle() ?>
-        [<?php echo strip_tags($conf['title'])?>]
+        <?php tpl_pagetitle() ?> - <?php echo strip_tags($conf['title'])?>
     </title>
     
     <script src="https://use.typekit.net/cts6oju.js"></script>
