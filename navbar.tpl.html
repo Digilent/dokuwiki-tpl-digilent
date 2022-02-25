@@ -1,71 +1,14 @@
-<div class="navbar-container">
-	<ul class="nav navbar-nav">
-
-		<!---------- Fundamentals ---------- 
+<div>
+	<ul class="nav navbar-nav flex-container">
 		<li class="dropdown dropdown-lg">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Fundamentals<b class="caret"></b></a>
-			<ul class="dropdown-menu dropdown-menu-lg row two-col">
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Electronic Components</li>
-						<li><a href="#">Resistor</a></li>
-						<li><a href="#">Diode</a></li>
-						<li><a href="#">LED</a></li>
-						<li><a href="#">More...</a></li>
-						<li class="divider"></li>
-
-						<li class="dropdown-header">Circuits</li>
-						<li><a href="#">Schematic Symbols</a></li>
-						<li><a href="#">Simple LED</a></li>
-						<li><a href="#">Voltage Divider</a></li>
-						<li><a href="#">More...</a></li>
-					</ul>
-				</li>
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Instrumentation</li>
-						<li><a href="#">Digital Multimeter</a></li>
-						<li><a href="#">Power Supply</a></li>
-						<li><a href="#">More...</a></li>
-						<li class="divider"></li>
-
-						<li class="dropdown-header">Programming</li>
-						<li><a href="#">C++ For Beginners</a></li>
-						<li><a href="#">The Wiring API</a></li>
-						<li><a href="#">Compilers</a></li>
-						<li><a href="#">More...</a></li>
-					</ul>
-				</li>
-			</ul>
-			</li>
-			-->
-
-		<li class="dropdown dropdown-lg">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Programmable Logic<b class="caret"></b></a>
-
-
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards and Components<b class="caret"></b></a>
 			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
-				<!--
-				<li class="col-sm-6">
+				<li class ="col-sm-7">
 					<ul>
-						<li class="dropdown-header">Getting Started</li>
-						<li><a href="#">Choosing an FPGA board</a></li>
-						<li><a href="#">Vivado Setup</a></li>
-						<li><a href="#">Verilog vs VHDL</a></li>
-
-						<li class="dropdown-header">Tutorials</li>
-						<li><a href="#">Blink! With Basys3</a></li>
-						<li><a href="#">Blink! With Arty</a></li>
-						<li><a href="#">Binary Counter</a></li>
-						<li><a href="#">More...</a></li>
-					</ul>
-				</li>	
-				-->
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Product Reference</li>
+						<li class="dropdown-header">FPGA/SoC Development Boards</li>
 						<li><a href="/reference/programmable-logic/arty-a7/start">Arty A7</a></li>
 						<li><a href="/reference/programmable-logic/arty-s7/start">Arty S7</a></li>
+						<li><a href="/reference/programmable-logic/arty-z7/start">Arty Z7</a></li>
 						<li><a href="/reference/programmable-logic/basys-3/start">Basys 3</a></li>
 						<li><a href="/reference/programmable-logic/cora-z7/start">Cora Z7</a></li>
 						<li><a href="/reference/programmable-logic/cmod-a7/start">Cmod A7</a></li>
@@ -76,70 +19,93 @@
 						<li><a href="/reference/programmable-logic/zedboard/start">Zedboard</a></li>
 						<li><a href="/reference/programmable-logic/zybo-z7/start">Zybo Z7</a></li>						
 						<li><a href="/reference/programmable-logic/start"  style="font-weight: 700;">More...</a></li>
+						<li><a href="/reference/programmable-logic/cmod-s7/start">Cmod S7</a></li>
+						<li><a href="/reference/programmable-logic/cora-z7/start">Cora Z7</a></li>
+						<li><a href="/reference/programmable-logic/eclypse-z7/start">Eclypse Z7</a></li>
+						<li><a href="/reference/programmable-logic/genesys-2/start">Genesys 2</a></li>
+						<li><a href="/reference/programmable-logic/genesys-zu/start">Genesys ZU</a></li>
+						<li><a href="/reference/programmable-logic/nexys-a7/start">Nexys A7</a></li>
+						<li><a href="/reference/programmable-logic/nexys-video/start">Nexys Video</a></li>
+						<li><a href="/reference/programmable-logic/usb104a7/start">USB104 A7</a></li>
+						<li><a href="/reference/programmable-logic/zedboard/start">Zedboard Zynq-7000 Development Board</a></li>
+						<li><a href="/reference/programmable-logic/zybo-z7/start">Zybo Z7</a></li>						
+						<li><a class="see-all" href="/reference/programmable-logic/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+
+					<ul>
+						<li class="dropdown-header">Programmers</li>
+						<li><a class="see-all" href="/reference/programmers/start">See All</a></li>
+					</ul>
+				</li>
+
+				<li class ="col-sm-5">
+					<ul>
+						<li class="dropdown-header">Expansion Modules</li>
+						<ul>
+							<li class="dropdown-header sub-heading">Zmods</li>
+							<li><a href="/reference/zmod/zmodadc/start">Zmod Scope 1410</a></li>
+							<li><a href="/reference/zmod/zmoddac/start">Zmod AWG 1411</a></li>
+							<li><a class="see-all" href="/reference/zmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header sub-heading">Pmods</li>
+							<li><a class="see-all" href="/reference/pmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+		
+						<ul>
+							<li class="dropdown-header sub-heading">Pcams</li>
+							<li><a href="/reference/add-ons/fmc-pcam-adapter/start">FMC Pcam Adapter</a></li>
+							<li><a href="/reference/add-ons/pcam-5c/start">Pcam 5C</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header">MCU Boards</li>
+							<li><a href="/reference/microprocessor/basys-mx3/start">Basys MX3</a></li>
+							<li><a href="/reference/microprocessor/max32/start">Max32</a></li>
+							<li><a href="/reference/microprocessor/uc32/start">uC32</a></li>
+							<li><a href="/reference/microprocessor/wf32/start">WF32</a></li>
+							<li><a href="/reference/microprocessor/wi-fire/start">Wi-Fire</a></li>
+							<li><a class="see-all" href="/reference/microprocessor/start">See All</a></li>
+						</ul>
 					</ul>
 				</li>
 			</ul>
 		</li>
 
 		<li class="dropdown dropdown-lg">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Microprocessors<b class="caret"></b></a>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Test and Measurement Equipment<b class="caret"></b></a>
 			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
-				<li class="col-sm-6">
+				<li class ="col-sm-12">
 					<ul>
-						<li class="dropdown-header">Product Reference</li>
-						<li><a href="/reference/microprocessor/basys-mx3/start">Basys MX3</a></li>
-						<li><a href="/reference/microprocessor/max32/start">Max32</a></li>
-						<li><a href="/reference/microprocessor/uc32/start">uC32</a></li>
-						<li><a href="/reference/microprocessor/wf32/start">WF32</a></li>
-						<li><a href="/reference/microprocessor/wi-fire/start">Wi-Fire</a></li>
-						<li><a href="/reference/microprocessor/start"  style="font-weight: 700;">More...</a></li>
+						<li class="dropdown-header">USB Scopes, Analyzers and Signal Generators</li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2/start">Analog Discovery 2</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-5250/start">Analog Discovery Pro (ADP5250)</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-3x50/start">Analog Discovery Pro (ADP3450/ADP3250)</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/start">Analog Discovery Studio</a></li>
+						<li><a href="/reference/test-and-measurement/digital-discovery/start">Digital Discovery</a></li>
+						<li><a class="see-all" href="/reference/test-and-measurement/start">See All</a></li>
+						<li class="divider"></li>
 					</ul>
-				</li>
-			</ul>
-		</li>
 
-		<li class="dropdown dropdown-lg">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Instrumentation<b class="caret"></b></a>
-			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
-
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Hardware</li>
-						<li><a href="/reference/instrumentation/analog-discovery-studio/start">Analog Discovery Studio</a></li>
-						<li><a href="/reference/instrumentation/analog-discovery-2/start">Analog Discovery 2</a></li>
-						<li><a href="/reference/instrumentation/digital-discovery/start">Digital Discovery</a></li>
-						<li><a href="/reference/instrumentation/openscope-mz/start">OpenScope MZ</a></li>
-						<li><a href="/reference/instrumentation/openlogger/start">OpenLogger</a></li>
-						<li><a href="/reference/instrumentation/analog-discovery/start">Analog Discovery</a></li>
-						<li><a href="/reference/instrumentation/electronics-explorer/start">Electronics Explorer</a></li>
-						<li><a href="/reference/instrumentation/start"  style="font-weight: 700;">More...</a></li>
-					</ul>
-				</li>
-
-				<li class="col-sm-6">
 					<ul>
 						<li class="dropdown-header ">Software</li>
 						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>
 						<li><a href="/reference/software/waveforms-live/start">WaveForms Live</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-
-		<li class="dropdown dropdown-lg">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pmods<b class="caret"></b></a>
-			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Product Reference</li>
-						<li><a href="/reference/pmod/pmodad1/start">PmodAD1</a></li>
-						<li><a href="/reference/pmod/pmodals/start">PmodALS</a></li>
-						<li><a href="/reference/pmod/pmodbt2/start">PmodBT2</a></li>
-						<li><a href="/reference/pmod/pmodoled/start">PmodOLED</a></li>
-						<li><a href="/reference/pmod/pmodmic3/start">PmodMIC3</a></li>
-						<li><a href="/reference/pmod/pmodoledrgb/start">PmodOLEDrgb</a></li>
-						<li><a href="/reference/pmod/pmodwifi/start">PmodWiFi</a></li>
-						<li><a href="/reference/pmod/start"  style="font-weight: 700;">More...</a></li>
+						<li class="dropdown-header">Adapters and Canvases</li>
+						<li><a href="/reference/add-ons/audio-adapter/start">Audio Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/bnc-adapter-board/start">BNC Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2-breadboard-breakout/start">Breadboard Breakout</a></li>
+						<li><a href="/reference/test-and-measurement/bb-adapter-board/start">Breadboard Adapter</a></li>
+						<li><a href="/reference/add-ons/impedance-analyzer/start">Impedance Analyzer Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/transistor-tester-adapter/start">Transistor Tester Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/blank-canvas/start">Blank Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/breadboard-canvas/start">Breadboard Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/interposer-canvas/start">Interposer Canvas</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -147,34 +113,41 @@
 
 		<li class="dropdown dropdown-lg">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Software<b class="caret"></b></a>
-			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
-				<li class="col-sm-6">
+			<ul class="dropdown-menu dropdown-menu-lg row one-col hortop">
+				<li class="col-sm-12">
 					<ul>
-						<li class="dropdown-header">Instrumentation</li>
-						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>
-						<li><a href="/reference/software/waveforms-live/start">WaveForms Live</a></li>
-					</ul>
-					<ul>
-						<li class="dropdown-header">Misc</li>
+						<li class="dropdown-header">Digilent Software</li>
 						<li><a href="/reference/software/adept/start">Adept 2</a></li>
-						<li><a href="/reference/software/digilent-agent/start">Digilent Agent</a></li>
-						<li><a href="/reference/software/digilent-instrumentation-protocol/start">Digilent Instrumentation Protocol</a></li>
-						<li><a href="/reference/software/digilent-core/start">Digilent Core</a></li>
-						<li><a href="/reference/software/start" style="font-weight: 700;">More...</a></li>
-					</ul>
-				</li>
-				<li class="col-sm-6">
-					<ul>
-						<li class="dropdown-header">Dokuwiki Plugins</li>
-						<li><a href="/reference/software/dokuwiki/plugins/digilent-infobox">Infobox</a></li>
-						<li><a href="/reference/software/dokuwiki/plugins/digilent-video-carousel">Video Carousel</a></li>											
+						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>
+						<li><a href="/reference/software/waveforms/waveforms-sdk/start">WaveForms SDK</a></li>
+						<li><a class="see-all"href="/reference/software/start">See All</a></li>
 					</ul>
 				</li>
 			</ul>
 		</li>
 
+		<li class="vertical-divider">
+			|
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://blog.digilentinc.com/" target="_blank" rel="noopener">Blog</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://forum.digilentinc.com" target="_blank" rel="noopener">Forum</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://projects.digilentinc.com" target="_blank" rel="noopener">Projects</a>
+		</li>
 
 
+		<li class="nav-link nav-link-secondary">
+			<a id="github-link" href="https://github.com/digilent" target="_blank" rel="noopener" title="Github">
+				<i id="github-icon" class="fa fa-github fa-lg"></i>
+				<span id="github-text">Digilent Github</span>
+			</a>
 		</li>
 	</ul>
 </div>

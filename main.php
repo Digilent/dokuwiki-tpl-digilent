@@ -27,15 +27,22 @@ if ($sidebarCols < 0 || $sidebarCols >= 12) {
 
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>
-        <?php tpl_pagetitle() ?> - <?php echo strip_tags($conf['title'])?>
+        <?php
+            if (wl($ID, false) == strip_tags($conf['baseurl']) . 'start') {
+                echo strip_tags($conf['title']) . ' - Manuals, Guides, Projects, and More';
+            } else {
+                tpl_pagetitle(); echo ' - ' . strip_tags($conf['title']);
+            }
+        ?>
     </title>
     
-    <script src="https://use.typekit.net/cts6oju.js"></script>
+    <script src="https://use.typekit.net/axp2oni.js"></script>
     <script>try{Typekit.load({ async: false });}catch(e){}</script>
     
     <?php @require_once(dirname(__FILE__).'/head-css.php'); ?>
 <?php
-$brandImg = tpl_getConf('header_img');
+// $brandImg = tpl_getConf('header_img');
+$brandImg = '/reference/_media/digilent-logo-reference-260.png';
 if ($brandImg == '') {
     $brandImg = $DOKU_INC . 'brand.png';
     if (!file_exists($brandImg)) $brandImg = $DOKU_INC . 'brand.jpg';
@@ -61,10 +68,61 @@ if ($brandImg != ''):
     </style>
 <?php endif; ?>
 
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9mGrPMbiRHWifVc","https://zn9mgrpmbirhwifvc-singuser98edbb5b.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9mGrPMbiRHWifVc")).start()}catch(i){}})();
+</script>
+<div id='ZN_9mGrPMbiRHWifVc'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/553b1116bb.js" crossorigin="anonymous"></script>
+
 <!-- Cookie Policy Notification -->
 <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.css"/>
 <script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/cookieconsent.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/digilent/resources/cdn/digilent-cookie-consent.js"></script>
+
+<!-- Mautic forms -->
+<script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://mautic.digilentinc.com/media/js/mautic-form.js';
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://mautic.digilentinc.com';
+        var MauticLang   = {
+            'submittingMessage': "Please wait..."
+        }
+    }
+</script>
+<script type="text/javascript">
+    var formName = 'digilentnewsletterbigcommerceform';
+    if (typeof MauticFormCallback == 'undefined') {
+        var MauticFormCallback = {};
+    }
+
+    MauticFormCallback[formName] = { onValidateStart: function() {
+        let refInput = document.getElementById('mauticform_input_digilentnewsletterbigcommerceform_referrer');
+        refInput ? refInput.value = document.referrer : false;
+
+        let pageInput = document.getElementById('mauticform_input_digilentnewsletterbigcommerceform_page');
+        pageInput ? pageInput.value = document.location.href : false;
+    },};
+</script>
+
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -73,6 +131,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NHG3J9R');</script>
 <!-- End Google Tag Manager -->
+
+<script src="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/src/sitewide-banner.js"></script>
+<link href="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/src/sitewide-banner.css" rel="stylesheet">
 
 </head>
 
@@ -95,100 +156,109 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div id="dokuwiki__top" class="dokuwiki site mode_<?php echo $ACT ?> <?php echo ($showSidebar) ? 'hasSidebar' : '' ?>">
         
 		<!-------------------------------------Start  OF HEADER------------------------------------->	
-		<div class="navbar navbar-default navbar-fixed-top container-fluid" id="navbar">
-            <div class="container">
-            <?php tpl_includeFile('header.html') ?>
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-toggle="collapse" data-target="#topnav" type="button">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <?php if ($brandImg != '') { ?>
-                    <a class="navbar-brand-img navbar-brand" href="/"><img src="<?php echo $brandImg; ?>" alt="<?php $conf['title'] ?>"></a>
-                <?php } ?>
-                <?php if ($brandImg == '' || tpl_getConf('header_title')) {
-                tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]" class="navbar-brand"');
-                } ?>		
+	<div class="navbar navbar-default navbar-fixed-top" id="navbar">
+            <div>
+                <ul id="header-tabs">
+                    <li>
+                        <a href="https://digilent.com">Shop</a>
+                    </li>
+                    <li id="wiki-tab">
+                        <a href="https://digilent.com/reference">Reference</a>
+                    </li>
+                </ul>
+                <div id="ni-tag">An NI Company</div>
             </div>
-			
-            <div class="navbar-collapse collapse" id="topnav">				
-				<!---------------Generate Navbar--------------->					
-					<div class="standard-nav nav nav-bar">
-						<a href ="http://store.digilentinc.com/">Store</a>
-						<a href ="http://blog.digilentinc.com/">Blog</a>
-						<a href ="http://forum.digilentinc.com/">Forum</a>
-                        <a href="http://projects.digilentinc.com/">Projects</a>
-                        <a href ="https://reference.digilentinc.com/">Documentation</a>
-					</div>
-					
-					<!------------------------------------------------------------------------------------------				
-					- START WIKI NAV
-					---------------------------------------------	--------------------------------------------->
-					<?php
-						echo getNavBar();
-					?>
-					<!------------------------------------------------------------------------------------------				
-					- END WIKI NAV
-					---------------------------------------------	--------------------------------------------->
-												
-					<!---------------Tools ---------------> 
-					<ul class="nav navbar-nav navbar-right">
-						<?php if ($showTools): ?>
-							<?php tpl_action('edit', 1, 'li'); ?>
-						<?php endif; ?> 
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle toolsdrop" data-toggle="dropdown"><?php echo $lang['tools']; ?> <b class="caret"></b></a>
-							<ul class="dropdown-menu hortop">
-								<li class="dropdown-header"><?php echo $lang['page_tools'] ?></li>
-								<?php
-									tpl_action('edit', 1, 'li');
-									if ($ACT == 'revisions') { tpl_action('revisions', 1, 'li class="active"'); } else { tpl_action('revisions', 1, 'li'); };
-									if ($ACT == 'backlink') { tpl_action('backlink', 1, 'li class="active"'); } else { tpl_action('backlink', 1, 'li'); };
-									tpl_action('subscribe', 1, 'li');
-									tpl_action('revert', 1, 'li');
-								?>
-								<li class="dropdown-header"><?php echo $lang['site_tools'] ?></li>
-								<?php if ($showTools): ?>
-								<?php
-									if ($ACT == 'recent') { tpl_action('recent', 1, 'li class="active"'); } else { tpl_action('recent', 1, 'li'); };
-									if ($ACT == 'index') { tpl_action('index', 1, 'li class="active"'); } else { tpl_action('index', 1, 'li'); };
-									if ($ACT == 'media') { tpl_action('media', 1, 'li class="active"'); } else { tpl_action('media', 1, 'li'); };
-									if ($ACT == 'admin') { tpl_action('admin', 1, 'li class="active"'); } else { tpl_action('admin', 1, 'li'); };
-								?>
-								<?php endif ?>
-								<?php if ($conf['useacl'] && $showTools): ?>
-								<li class="dropdown-header"><?php echo $lang['user_tools'] ?></li>
-								<?php
-									if ($ACT == 'profile') { tpl_action('profile', 1, 'li class="active"'); } else { tpl_action('profile', 1, 'li'); };
-									if ($ACT == 'login') { tpl_action('login', 1, 'li class="active"'); } else { tpl_action('login', 1, 'li'); };
-								?>
-								<?php endif; ?>
-								<li class="divider"></li>
-								<?php /* the optional second parameter of tpl_action() switches between a link and a button,
-								 e.g. a button inside a <li> would be: tpl_action('edit', 0, 'li') */
-									tpl_action('top', 1, 'li');
-								?>
-							</ul>
-						</li>
-					</ul>
-				<!---------------Search--------------->
-				<?php _tpl_searchform() ?>
 
-		</div>
-	</div>	
-    </div>
+
+            <div class="container">
+                <?php tpl_includeFile('header.html') ?>
+                <div id="header-main">
+                    
+                    <div class="flex-container">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target="#topnav" type="button">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!---------------Search--------------->
+                        <?php _tpl_searchform() ?>
+                        
+                        <!---------------Logo ---------------> 
+                        <?php if ($brandImg != '') { ?>
+                            <div id="logo"><a class="navbar-brand-img" href="/reference"><img src="<?php echo $brandImg; ?>" alt="<?php $conf['title'] ?>"></a></div>
+                        <?php } ?>
+                        <?php if ($brandImg == '' || tpl_getConf('header_title')) {
+                        tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]" class="navbar-brand"');
+                        } ?>
+
+                        <!---------------Tools ---------------> 
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle toolsdrop" data-toggle="dropdown">
+                                <i id="tools-icon" class="fas fa-tools"></i><span id="tools-text">
+                                Internal Tools</span><b class="caret"></b></a>
+                                <ul id="tools-menu" class="dropdown-menu hortop">
+                                    <li class="dropdown-header"><?php echo $lang['page_tools'] ?></li>
+                                    <?php
+                                        tpl_action('edit', 1, 'li');
+                                        if ($ACT == 'revisions') { tpl_action('revisions', 1, 'li class="active"'); } else { tpl_action('revisions', 1, 'li'); };
+                                        if ($ACT == 'backlink') { tpl_action('backlink', 1, 'li class="active"'); } else { tpl_action('backlink', 1, 'li'); };
+                                        tpl_action('subscribe', 1, 'li');
+                                        tpl_action('revert', 1, 'li');
+                                    ?>
+                                    <li class="dropdown-header"><?php echo $lang['site_tools'] ?></li>
+                                    <?php if ($showTools): ?>
+                                    <?php
+                                        if ($ACT == 'recent') { tpl_action('recent', 1, 'li class="active"'); } else { tpl_action('recent', 1, 'li'); };
+                                        if ($ACT == 'index') { tpl_action('index', 1, 'li class="active"'); } else { tpl_action('index', 1, 'li'); };
+                                        if ($ACT == 'media') { tpl_action('media', 1, 'li class="active"'); } else { tpl_action('media', 1, 'li'); };
+                                        if ($ACT == 'admin') { tpl_action('admin', 1, 'li class="active"'); } else { tpl_action('admin', 1, 'li'); };
+                                    ?>
+                                    <?php endif ?>
+                                    <?php if ($conf['useacl'] && $showTools): ?>
+                                    <li class="dropdown-header"><?php echo $lang['user_tools'] ?></li>
+                                    <?php
+                                        if ($ACT == 'profile') { tpl_action('profile', 1, 'li class="active"'); } else { tpl_action('profile', 1, 'li'); };
+                                        if ($ACT == 'login') { tpl_action('login', 1, 'li class="active"'); } else { tpl_action('login', 1, 'li'); };
+                                    ?>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="header-categories">
+                <div class="container">
+                    <div class="container navbar-collapse collapse" id="topnav">				
+                        <!---------------Generate Navbar--------------->					
+                            
+                            <!------------------------------------------------------------------------------------------				
+                            - START WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            <?php
+                                echo getNavBar();
+                            ?>
+                            <!------------------------------------------------------------------------------------------				
+                            - END WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            
+                    </div>
+                </div>
+            </div>	
+
+            <section id="sitewide-banner-slot"></section>
+        </div>
+
 	<!-------------------------------------END OF HEADER------------------------------------->
         <div class="container<?php if ((int) tpl_getConf('full_width') === 1) { echo "-fluid"; } ?> not-header">
             <div class="notifications hidden-print">
                 <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
             </div>
-			
-			<!--Removed By Kristoff
-				<a href="#dokuwiki__content" class="sr-only hidden-print"><//?php echo $lang['skip_to_content']; ?></a>
-				<a href="#dokuwiki__aside" class="skip-to-sidebar hidden-print visible-xs btn-block btn btn-info"><//?php echo "Skip to Navigation"; // echo $lang['skip_to_nav']; ?></a>
-			-->
+
             <?php if($conf['breadcrumbs']) _tpl_breadcrumbs(); ?>
             
             <?php if($conf['youarehere']){ ?>
@@ -265,88 +335,126 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			
     </div></div><!-- /site -->
 	<div class="container-fluid footer">
-	<div class="container">
-        <div class="row">
-            <!-- <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                <div class="mailchimp-newsletter">
-                    <h3 class="text-center">Subscribe to our Newsletter</h3>
-                    <div id="mc_embed_signup">
-                    <form action="//digilentinc.us8.list-manage.com/subscribe/post?u=cf6d73f14b5a712de344b738a&amp;id=7953e871f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll row">
-                            <div class="mc-field-group form-group">
-                                <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" placeholder="First Name">
-                            </div>
-                            <div class="mc-field-group form-group">
-                                <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME" placeholder="Last Name">
-                            </div>
-                            <div class="mc-field-group form-group">
-                                <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address">
-                            </div>
+        <div class="container">
+            <div class="row footer-links">
 
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                <input type="text" name="b_cf6d73f14b5a712de344b738a_7953e871f4" tabindex="-1" value="">
-                            </div>
-                            <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="btn form-control">
-                        </div>
-                    </form>
-                    </div> 
-                </div>
-            </div> -->
-        </div>
-		<div class="row footer-links">
-            <div class="col-xs-3 col-sm-2">
-                <h4>Our Partners</h4>
-                <ul class="no-bullet">
-                    <li><a href="https://store.digilentinc.com/partners/xilinx-university-program/">Xilinx
-                            University
-                            Program</a></li>
-                    <li><a href="https://store.digilentinc.com/technology-partners/">Technology Partners</a>
-                    </li>
-                    <li><a href="https://store.digilentinc.com/our-distributors/">Distributors</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-3 col-sm-2">
-                <h4>Help</h4>
-                <ul class="no-bullet">
-                    <li><a href="https://forum.digilentinc.com">Technical Support Forum</a></li>
-                    <li><a href="https://reference.digilentinc.com">Reference Wiki</a></li>
-                    <li><a href="https://store.digilentinc.com/contact-us/">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-3 col-sm-2">
-                <h4>Customer Info</h4>
-                <ul class="no-bullet">
-                    <li><a href="https://youtube.com/user/digilentinc">Videos</a></li>
-                    <li><a href="https://resource.digilentinc.com/verify/faq">FAQ</a></li>
-                    <li><a href="https://store.digilentinc.com/store-info/">Store Info</a></li>
-                </ul>
-            </div>
-
-            <div class="col-xs-3 col-sm-2">
-                <h4>Company Info</h4>
-                <ul class="no-bullet">
-                    <li><a href="https://store.digilentinc.com/pages.php?pageid=26">About Us</a></li>
-                    <li><a href="https://store.digilentinc.com/shipping-returns/">Shipping & Returns</a></li>
-                    <li><a href="https://store.digilentinc.com/legal/">Legal</a></li>
-                    <li><a href="https://store.digilentinc.com/jobs/">Jobs</a></li>
-                    <li><a href="https://store.digilentinc.com/internships/">Internships</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 social">
-                <h4>Connect With Us</h4>
-                    <ul class="inline-list social-footer">
-                        <li><a href="https://twitter.com/digilentinc"><img data-type="twitter" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic twitter" alt="social"/></a></li>
-                        <li><a href="https://www.facebook.com/Digilent"><img data-type="facebook" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic facebook" alt="social"/></a></li>
-                        <li><a href="https://www.youtube.com/user/DigilentInc"><img data-type="youtube" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic youtube" alt="social"/></a></li>
-                        <li><a href="https://instagram.com/digilentinc"><img data-type="instagram" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic instagram" alt="social"/></a></li>
-                        <li><a href="https://github.com/digilent"><img data-type="github" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic github" alt="social"/></a></li>
-                        <li><a href="https://www.reddit.com/r/digilent"><img data-type="reddit" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic reddit" alt="social"/></a></li>
-                        <li><a href="https://www.linkedin.com/company/1454013"><img data-type="linkedin" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic linkedin" alt="social"/></a></li>
-                        <li><a href="https://www.flickr.com/photos/127815101@N07"><img data-type="flickr" data-src="<?php print DOKU_TPL; ?>Iconic/svg/smart/social.svg" class="iconic flickr" alt="social"/></a></li>
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/company/">Company</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/company/#about-digilent">About Us</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#faqs">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/shipping-returns/">Shipping & Returns</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#jobs">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/legal-privacy/">Legal & Privacy</a>
+                        </li>
                     </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/news/">News</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#newsletter">Newsletter</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#events">Events</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/affiliations/">Affiliations</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/affiliations/#distributors">List of Distributors</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/affiliations/#partners">Technology Partners</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-4">
+                    <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
+                    <p>Get the latest updates on new products and upcoming sales</p>
+
+                    <script type="text/javascript" src="//mautic.digilentinc.com/form/generate.js?id=143"></script>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">Contact Us</h5>
+                    <ul id="contact-us-links">
+                        <li>
+                            <a href="https://digilent.com/support/#channels">Support Channels</a>
+                        </li>
+                    </ul>
+                    <address>
+                        Digilent<br>
+                        1300 NE Henley Ct. Suite 3<br>
+                        Pullman, WA 99163<br>
+                        United States of America
+                    </address>
+                </div>
+
+                <div class="footer-info-col col-xs-12 social">
+                    <ul class="socialLinks">
+                        <li class="socialLinks-item">
+                            <a href="http://twitter.com/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="http://facebook.com/Digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.youtube.com/user/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://github.com/digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://instagram.com/digilentinc" target="_blank" rel="noopener">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.linkedin.com/company/1454013" target="_blank" rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.flickr.com/photos/127815101@N07" target="_blank" rel="noopener">
+                                <i class="fa fa-flickr"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
             </div>
         </div>
-	</div>
 	</div>
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
@@ -362,7 +470,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     })(window,document,'script','https://mautic.digilentinc.com/mtc.js','mt');
     mt('send', 'pageview');
 
-</script>
+    </script>
+
+    <!-- Lucky Orange -->
+    <script type='text/javascript'>
+    window.__lo_site_id = 287347;
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+
 </body>
 </html>
 
