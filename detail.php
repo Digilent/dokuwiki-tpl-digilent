@@ -73,6 +73,8 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
                     <?php //Comment in for Debug// dbg(tpl_img_getTag('Simple.Raw'));?>
                 </div></div>
             </div><!-- /.content -->
+            <!--
+                these buttons are commented out as a temporary fix; doku.php link is not being resolved correctly leading to a 404 error at digilent.com/doku.php/
             <div class="btn-group">
                 <a class="btn btn-default" href="<?php print DOKU_REL . 'doku.php/' . $ID; ?>" class="btn">&larr; <?php print $lang['img_backto'] . ' ' . $ID?></a>
                 <?php
@@ -84,6 +86,7 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
                     }
                 ?>
             </div>
+            -->
         <?php } ?>
     </div>
 
