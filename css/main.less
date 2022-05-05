@@ -67,7 +67,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  align-items: center;
+  align-items: baseline;
   width: 100%;
 }
 
@@ -82,6 +82,7 @@ body {
 
 .navbar-toggle {
   margin: 0;
+  height: 34px;
 }
 
 #search-icon {
@@ -92,6 +93,10 @@ body {
 
 #qsearch__in {
   padding-left: 35px;
+}
+
+.navbar-form {
+  border: none;
 }
 
 #logo {
@@ -128,6 +133,10 @@ body {
   -webkit-box-shadow: 0 8px 6px -9px #999;
   -moz-box-shadow: 0 8px 6px -9px #999;
   box-shadow: 0 8px 6px -9px #999;
+}
+
+#sitewide-banner-slot {
+  height: 34px;
 }
 
 .navbar-collapse {
@@ -319,7 +328,7 @@ li.vertical-divider {
   background: @ini_sarthNavbar-secondaryColor;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #topnav {
     background-color: #f0f2f0;
   }
@@ -483,13 +492,9 @@ li.vertical-divider {
 
 }
 
-
-
-/*----------'Bottom Align' Navbar Elements -----------*/
-
 #navbar .navbar-nav
 {
-
+  align-self: center;
 }
 
 
